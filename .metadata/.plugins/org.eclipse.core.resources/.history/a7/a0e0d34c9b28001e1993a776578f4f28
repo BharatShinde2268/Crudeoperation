@@ -1,0 +1,42 @@
+package com.main.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.main.model.User;
+import com.main.repository.UserRepo;
+import com.main.service.UserService;
+@Service
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	private UserRepo repo;
+	
+	
+	@Override
+	public User createUser(User user) {
+		User save = repo.save(user);
+		return save;
+	}
+
+	@Override
+	public void deleteUser(String id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public User getSingleUser(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<User> getAllUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

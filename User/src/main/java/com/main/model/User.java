@@ -1,0 +1,37 @@
+package com.main.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Builder
+@Entity
+@Table(name="UserInfo")
+public class User {
+
+	@Id
+	private String id;
+	private String name;
+	private String email;
+	private String phone;
+	private String city;
+	
+	@Transient
+	private List<Rating> ratings = new ArrayList<>();
+	
+	
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=User/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.main.service{UserService.java[UserService" modifiers="513" timestamp="1690035637366"/>
+    <typeInfo handle="=Hotel-Service/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.main.repo{HotelRepository.java[HotelRepository" modifiers="513" timestamp="1690041056313"/>
+    <typeInfo handle="=Hotel-Service/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.main.service{HotelService.java[HotelService" modifiers="513" timestamp="1690042451776"/>
+    <typeInfo handle="=Rating-Service/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.main.service{RatingService.java[RatingService" modifiers="513" timestamp="1690044692512"/>
+</typeInfoHistroy>

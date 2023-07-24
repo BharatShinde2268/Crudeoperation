@@ -1,0 +1,6 @@
+#eureka server
+
+
+eureka:
+  client:
+    register-with-eureka: falsea

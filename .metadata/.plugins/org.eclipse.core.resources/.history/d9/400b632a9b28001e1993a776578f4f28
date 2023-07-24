@@ -1,0 +1,5 @@
+package com.main.exceptions;
+
+public class ResourceNotFoundException {
+
+}

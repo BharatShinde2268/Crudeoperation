@@ -1,0 +1,56 @@
+package com.main.service.impl;
+
+import java.lang.reflect.Array;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.main.exceptions.ResourceNotFoundException;
+import com.main.model.User;
+import com.main.repository.UserRepo;
+import com.main.service.UserService;
+@Service
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	private UserRepo repo;
+	
+	@Autowired
+	private RestTemplate restTemplate;
+	
+	
+	@Override
+	public User createUser(User user) {
+		User save = repo.save(user);
+		return save;
+	}
+
+	@Override
+	public void deleteUser(String id) {
+		User deleted = repo.findById(id).orElseThrow(()-> new ResourceNotFoundException("User is not found "));
+		repo.delete(deleted);
+		
+
+	}
+
+	@Override
+	public User getSingleUser(String id) {
+		User findUser = repo.findById(id).orElseThrow(()-> new ResourceNotFoundException("User is not found "));
+		// fetch rating of the user from rating service
+		// http://localhost:8184/ratings/all/userId/14
+		restTemplate.getForObject("http://localhost:8184/ratings/all/userId/14", Array.class)
+		
+		
+		return findUser;
+	}
+
+	@Override
+	public List<User> getAllUsers() {
+		List<User> findAll = repo.findAll();
+		
+		return findAll;
+	}
+
+}

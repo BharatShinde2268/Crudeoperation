@@ -1,0 +1,23 @@
+package com.main.service;
+
+import com.main.entity.Hotel;
+
+public interface HotelService {
+	
+	// create hotel
+	
+	public Hotel createHotel(Hotel hotel);
+	
+	
+	// update hotel 
+	
+	
+	// delete hotel 
+	
+	
+	// get single hotel 
+	
+	
+	// get all hotels
+
+}

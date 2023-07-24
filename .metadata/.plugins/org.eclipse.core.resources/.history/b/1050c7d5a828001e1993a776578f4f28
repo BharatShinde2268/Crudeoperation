@@ -1,0 +1,43 @@
+package com.main.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.main.entity.Hotel;
+import com.main.repo.HotelRepository;
+import com.main.service.HotelService;
+
+@Service
+public class HotelServiceImpl implements HotelService {
+
+	@Autowired
+	private HotelRepository repository;
+	
+	
+	@Override
+	public Hotel createHotel(Hotel hotel) {
+		Hotel save = repository.save(hotel);
+		return save;
+	}
+
+	@Override
+	public void deleteHotel(String id) {
+		repository.findById(id)
+
+	}
+
+	@Override
+	public Hotel getSingleHotes(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Hotel> getAllHotel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

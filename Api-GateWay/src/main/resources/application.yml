@@ -1,0 +1,35 @@
+server:
+  port: 8185
+  
+spring:
+  application:
+    name: Api-GateWay
+  cloud:
+    gateway:
+      routes:
+      - id: User-Service
+        uri: lb://User-Service
+        predicates:
+        - Path=/user/**
+        
+      - id: Hotel-Service
+        uri: lb://Hotel-Service
+        predicates:
+        - Path=/hotel/**
+        
+      - id: Rating-Service
+        uri: lb://Rating-Service
+        predicates:
+        - Path=/ratings/**  
+          
+ 
+ 
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
